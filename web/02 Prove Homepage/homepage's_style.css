@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(196, 195, 195);
+}
+
+h1{
+    padding-top: 10px;
+    text-align: center;
+}
+#short_intro{
+    color: red;
+}
+h3{
+    text-align: center;
+}
+
+.main-grid{
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 150px;
+    column-gap: 10px;
+}
+
+.grid{
+    text-align: center;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+}
+
+.grid:hover{
+    background-color: rgb(174, 225, 245);
+}
