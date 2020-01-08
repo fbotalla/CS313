@@ -1,5 +1,5 @@
 function changeToIntro(){
-        location.href = "introduction.html"
+        location.href = "introduction.php"
  }
 
  function changeToAssignments(){
