@@ -4,12 +4,11 @@ function displaClicked(){
 
 function changeColor(){
      var tempColor = document.getElementById("color").value;
-    // document.getElementById("first").style.backgroundColor = tempColor;
-
-    $("div#first").css({"background-color": tempColor});
+     $("div#first").css({"background-color": tempColor});
 
 }
 
-function changeFade(){
-
+function changeFade(){  
+   $("div#third").fadeToggle(3000);
+   
 }
