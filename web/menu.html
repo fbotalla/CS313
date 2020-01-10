@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CS313 Home page</title>
+    <link rel="stylesheet" href="02-Prove-Homepage/homepage's_style.css">
+    <script src="menu.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+    <script>
+        function changeToTA(){
+            location.href = "Team-Activities/TAassignments.html"
+        }
+
+        function changeToNormalAssignments(){
+            location.href = "02-Prove-Homepage/assignments.html"
+        }               
+    </script>
+</head>
+
+<body>
+
+<div class="main-grid">
+    <div class="grid" onclick="changeToTA()">
+        <h3>View Team Activity Assignments </h3>
+
+    </div>
+
+    <div class="grid" onclick="changeToNormalAssignments()">
+        <h3>Click here for a list of all assignments! </h3>
+
+    </div>
+</div>

@@ -3,6 +3,6 @@ function changeToIntro(){
  }
 
  function changeToAssignments(){
-     location.href = "assignments.html"
+     location.href = "../menu.html"
 
  }
