@@ -39,7 +39,7 @@
             <div class="price">
                 <p>Original Juventus Winter Coat</p>
                 <p>Price: $250</p>
-                <button>Add to Cart</button>
+                Add to Cart<input type="checkbox" name="coat" id="coat" value="250.00">
             </div>
 
         </div>
@@ -49,7 +49,7 @@
             <div class="price">
                 <p>Original Juventus Glasses</p>
                 <p>Price: $30</p>
-                <button>Add to Cart</button>
+                Add to Cart<input type="checkbox" name="glasses" id="glasses" value="30.00">
             </div>
 
         </div>
@@ -59,7 +59,7 @@
             <div class="price">
                 <p>Original Juventus Winter Gloves</p>
                 <p>Price: $30</p>
-                <button>Add to Cart</button>
+                Add to Cart<input type="checkbox" name="gloves" id="gloves" value="30.00">
             </div>
 
         </div>
@@ -69,7 +69,7 @@
             <div class="price">
                 <p>Original Juventus Sun Hat</p>
                 <p>Price: $50</p>
-                <button>Add to Cart</button>
+                Add to Cart<input type="checkbox" name="hat" id="hat" value="50.00">
             </div>
 
         </div>
@@ -79,7 +79,7 @@
             <div class="price">
                 <p>Original Juventus Long-sleeve Shirt</p>
                 <p>Price: $100</p>
-                <button>Add to Cart</button>
+                Add to Cart<input type="checkbox" name="longsleeve" id="longsleeve" value="100.00">
             </div>
 
         </div>
@@ -89,7 +89,7 @@
             <div class="price">
                 <p>Original Juventus Winter Scarf</p>
                 <p>Price: $40</p>
-                <button>Add to Cart</button>
+                Add to Cart<input type="checkbox" name="scarf" id="scarf" value="40.00">
             </div>
 
         </div>
@@ -99,7 +99,7 @@
             <div class="price">
                 <p>Original Juventus Game Shirt</p>
                 <p>Price: $75</p>
-                <button>Add to Cart</button>
+                Add to Cart<input type="checkbox" name="shirt" id="shirt" value="75.00">
             </div>
 
         </div>
@@ -109,7 +109,7 @@
             <div class="price">
                 <p>Original Juventus Casual Shoes</p>
                 <p>Price: $150</p>
-                <button>Add to Cart</button>
+                Add to Cart<input type="checkbox" name="shoes" id="shoes" value="150.00">
             </div>
 
         </div>
@@ -119,7 +119,7 @@
             <div class="price">
                 <p>Original Juventus Ball</p>
                 <p>Price: $50</p>
-                <button>Add to Cart</button>
+                Add to Cart<input type="checkbox" name="ball" id="ball" value="50.00">
             </div>
 
         </div>
@@ -129,7 +129,7 @@
             <div class="price">
                 <p>Original Juventus Socks</p>
                 <p>Price: $20</p>
-                <button>Add to Cart</button>
+                Add to Cart<input type="checkbox" name="socks" id="socks" value="20.00">
             </div>
 
         </div>
@@ -139,7 +139,7 @@
             <div class="price">
                 <p>Original Juventus Complete</p>
                 <p>Price: $250</p>
-                <button>Add to Cart</button>
+                Add to Cart<input type="checkbox" name="tuta" id="tuta" value="250.00">
             </div>
 
         </div>
