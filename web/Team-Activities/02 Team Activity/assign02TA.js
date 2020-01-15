@@ -3,7 +3,7 @@ function displaClicked(){
 }
 
 function changeColor(){
-     var tempColor = document.getElementById("color").value;
+     var tempColor = $("#color").val();
      $("div#first").css({"background-color": tempColor});
 
 }
