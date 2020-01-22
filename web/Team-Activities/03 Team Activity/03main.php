@@ -6,6 +6,13 @@
         </title>
     </head>
     <body>
+
+    <?php
+
+    $majors = array("Computer Science" =>"CS", "Web Design and Development" => "WDD", "Computer information Technology" => "CIT", "Computer Engineering" => "CE")
+    ?>
+
+    
         <form action="03teach.php" method="post">
             <label>Name</label>
             <input id="name" name="name">
@@ -15,18 +22,14 @@
             <br>
             <label>Major:</label>
             <br>
-            <input type="radio" name="major" value="CS" id="major-cs">
-            <label>Computer Science</label>
-            <br>
-            <input type="radio" name="major" value="WDD" id="major-wdd">
-            <label>Web Design & Developement</label>
-            <br>
-            <input type="radio" name="major" value="CIT" id="major-cit">
-            <label>Computer Information Technology</label>
-            <br>
-            <input type="radio" name="major" value="CE" id="major-ce">
-            <label>Computer Engineering</label>
-            <br>
+
+            <?php
+                foreach($majors as $x => $x_value):
+                ?>
+            
+                <input type="radio" name = "major" value = "<?php $x?>" id = "<?php $x_value ?>"><?php echo $x ?> <br>
+            <?php endforeach; ?>
+
             <label>Comments</label>
             <textarea id="comments" name="comments" rows="3" cols="40"></textarea>
             <br> <br>
@@ -55,5 +58,6 @@
             <br>
             <input type="submit">
         </form>
+        
     </body>
 </html>
