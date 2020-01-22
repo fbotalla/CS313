@@ -2,11 +2,10 @@
 
 <head>
     <link rel="stylesheet" href="cart.css">
-    <script src= "cart.js"></script>
 
 </head>
 
-<body>
+<body onload="calcTotal()">
 
 <h2>Your Cart</h2>
 
@@ -26,28 +25,54 @@
  $item[10] = $_POST["socks"];
  $item[11] = $_POST["tuta"];
 
+ $sum = array_sum($item);
+
+$remaining = 0;; 
+
 
 $photo = array("shorts", "coat","glasses","gloves","hat","longsleeve","scarf","shirt","shoes","ball","socks","tuta");
 ?>
 
-<?php
-if(empty($item)){
-    echo "Your cart is empty";
- }
- else{
-    echo '<table id="cart_table"><tr><th>Item</th><th>Price</th><th></th></tr>' ;
-         for($i = 0;$i< count($item);$i++){
-             if(!empty($item[$i])){     
-                 echo '<tr><td>' . "<img src = 'images/$photo[$i].jpg'>" .'</td>';
-                 echo '<td>' .'$' . $item[$i] . '</td>'; 
-                 echo '<td>' . '<button id= "btn"   onclick =  "deleteRow(this)"> Remove</button>'.'</tr>' ;       
-             }         
-         }
-         echo '</table>';
-         }
-         
- ?>
 
+<?php
+    if(empty($item)):
+?>
+         <span>Your cart is empty</span>
+<?php
+    else:
+?>
+        <table id="cart_table">
+            <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th></th>
+            </tr>
+            <?php
+                for($i = 0;$i< count($item);$i++):
+                    if(!empty($item[$i])):
+                        $numRow++; 
+            ?>
+                        <tr>
+                            <td><img src ='images/<?php echo $photo[$i] ?>.jpg'/></td>
+                            <td>$<?php echo $item[$i]; ?></td> 
+                            <td><button id= "btn" onclick =  "this.parentNode.parentNode.parentNode.removeChild(this.parentNode.parentNode); this.parentNode.paretnNode.parentNode.sum(<?php $remaining . '+=td.parentNode.value]' ?>);"> Remove</button></tr>
+                        
+                        </tr>
+            <?php
+                    endif;
+                endfor;
+            ?>   
+        </table>
+<?php
+    endif;
+?>
+ <script>
+    function deleteFromCart(rowToDelete){
+        document.getElementById("cart_table").deleteRow(rowToDelete);
+    }
+ </script>
+
+<p id="total"> </p>
 
 <div class = grid>
      
@@ -59,14 +84,17 @@ if(empty($item)){
     <div class = grid_item>
         <p >
         <?php
-            $sum = array_sum($item);
-            echo "Your total is $" . number_format((float)$sum,2,'.','')
+            session_start();
+            $total = $sum - $remaining;
+            echo "Your total is $" . number_format((float)$total,2,'.','');
+            $_SESSION["total"] = $total - $remaining;
+            $_SESSION["remaining"] = $remaining
         ?>
         </p>
     </div>
 
     <div class = grid_item>
-        <button><a href="main.php">Back</a></button>
+        <button><a href="checkout.php">Checkout</a></button>
     </div>
 
 </div>
