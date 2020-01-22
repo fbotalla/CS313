@@ -23,6 +23,7 @@
             $nameErr = "Only letters and white space allowed";
             }else{
                 $nameCheck = true;
+                $_SESSION["name"] = $name;
             }
         }
 
@@ -34,6 +35,7 @@
             $lastNameErr = "Only letters and white space allowed";
             }else{
                 $lastNameCheck = true;
+                $_SESSION["lastname"] = $lastName;
             }
         }
         
@@ -43,6 +45,9 @@
             $email = test_input($_POST["email"]);
             if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $emailErr = "Invalid email format";
+            }else{
+                $emailCheck = true;
+                $_SESSION["email"] = $email;
             }
         }
 
@@ -52,8 +57,11 @@
                 $stName = test_input($_POST["street"]);
                 if (!preg_match("/^(.+)\s(\S+)$/",$stName)) {
                 $stNameErr = "Invalid street name format, please check your spaces";
+            }else{
+                $stNameCheck = true;
+                $_SESSION["street"] = $stName;
             }
-            }
+         }
 
             if (empty($_POST["city"])) {
                 $cityErr = "City for your address is required";
@@ -61,8 +69,11 @@
                 $city = test_input($_POST["city"]);
                 if (!preg_match("/^[a-zA-Z ]*$/",$city)) {
                 $cityErr = "Please enter a valid city";
+            }else{
+                $cityCheck = true;
+                $_SESSION["city"] = $city;
             }
-            }
+         }
 
             if (empty($_POST["state"])) {
                 $stateErr = "State for your address is required";
@@ -70,22 +81,27 @@
                 $state = test_input($_POST["state"]);
                 if (!preg_match("/^[a-zA-Z ]*$/",$state)) {
                 $stateErr = "Please enter a valid state, enter the two letters or the entire state name";
+            }else{
+                $stateCheck = true;
+                $_SESSION["state"] = $state;
             }
-            }
+           }
 
             if (empty($_POST["zip"])) {
                 $zipErr = "Zip code for your address is required";
             } else {
                 $zip = test_input($_POST["zip"]);
-                if (!preg_match("/^[1-9]*$/",$zip)) {
-                $zipErr = "Only numbers";
+                if (!preg_match("/[0-9]{5}/",$zip)) {
+                $zipErr = "Only numbers 12345";
+            }else{
+                $zipCheck = true;
+                $_SESSION["zip"] = $zip;
             }
         }
 
 
-        if($nameCheck == true && $lastNameCheck == true){
+        if($nameCheck == true && $lastNameCheck == true && $emailCheck == true && $stNameCheck == true && $cityCheck == true && $stateCheck == true && $zipCheck == true){
             header('Location: confirmation.php');
-        
             exit();
         }
         
@@ -100,7 +116,7 @@
         }
     ?>
 
-    <h2>PHP Form Validation Example</h2>
+    <h2>Checkout Form</h2>
     <p><span class="error">* required field</span></p>
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
     Name: <input type="text" name="name" value="<?php echo $name;?>">

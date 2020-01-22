@@ -144,7 +144,7 @@
 
         </div>
     </div>
-    <input type="submit" name="submit" id="submit">
+    <div style="text-align: center"><input style="text-align: center" type="submit" name="submit" id="submit"></div>
     </form>
 
     

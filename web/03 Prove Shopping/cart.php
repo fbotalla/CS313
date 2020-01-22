@@ -10,6 +10,7 @@
 <h2>Your Cart</h2>
 
 <?php
+session_start();
  $item = array();
 
  $item[0] = $_POST["shorts"];
@@ -27,8 +28,10 @@
 
  $sum = array_sum($item);
 
-$remaining = 0;; 
+$remaining = 0;
 
+
+$_SESSION["items"] = $item;
 
 $photo = array("shorts", "coat","glasses","gloves","hat","longsleeve","scarf","shirt","shoes","ball","socks","tuta");
 ?>
