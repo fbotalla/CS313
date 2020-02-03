@@ -1,0 +1,50 @@
+body{
+    background-color: peachpuff;
+}
+.top-page{
+    display: grid;
+    grid-template-columns: auto  auto;
+    background-color: white;
+}
+div#log, div#sign{
+    float: right;
+    padding-right: 15px;
+    padding-top: 15px;
+}
+button#log, button#sign{
+   font-size: 16px;
+   background-color: rgb(255, 191, 72);
+}
+#title{
+    text-align: center;
+    font-family: 'Sigmar One', cursive;
+    font-size: 60px;
+    color: rgb(97, 97, 248);
+}
+.middle-page{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    margin-left: 20%;
+    padding-top: 2%;
+}
+.middle-page-link{
+    font-size: 18px;
+    font-family: 'Sigmar One', cursive;
+    color: rgb(255, 191, 72);
+}
+.picture{
+    padding-top: 5%;
+    text-align: center;
+}
+.coaches-box{
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+.grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }
