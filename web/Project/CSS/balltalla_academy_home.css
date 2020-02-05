@@ -1,6 +1,3 @@
-body{
-    background-color: peachpuff;
-}
 .top-page{
     display: grid;
     grid-template-columns: auto  auto;
@@ -32,19 +29,60 @@ button#log, button#sign{
     font-family: 'Sigmar One', cursive;
     color: rgb(255, 191, 72);
 }
+.middle-page-link:hover{
+    background: -webkit-linear-gradient(left, rgba(255,0,0,0), rgb(177, 178, 255));
+  }
 .picture{
     padding-top: 5%;
     text-align: center;
+}
+.paragraph{
+    padding-top: 1.5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-right: auto;
+    margin-left: auto;
+}
+.paragraph>p{
+    font-size: 25px;
+    font-family: 'Sigmar One', cursive;
+    text-align: center;
+    background: -webkit-linear-gradient(left, rgba(255,0,0,0), rgb(177, 178, 255));
 }
 .coaches-box{
     display: grid;
     grid-gap: 50px;
     grid-template-columns: auto auto auto;
-    padding: 10px;
+    padding-top: 15px;
 }
 .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
     padding: 20px;
     font-size: 30px;
     text-align: center;
   }
+  .grid-item p:hover{
+    background: -webkit-linear-gradient(left, rgba(255,0,0,0), rgb(177, 178, 255));
+  }
+  h2{
+      text-align: center;
+      font-family: 'Sigmar One', cursive;
+      font-size: 40px;
+      color: blue;
+  }
+  #buttom-page{
+    background: -webkit-linear-gradient(left, rgba(255,0,0,0), rgb(177, 178, 255));
+  }
+.contact-us{
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: auto auto;
+    padding-top: 50px;
+}
+.extra-grid{
+    display: grid;
+    grid-gap: 50px;
+    grid-template-columns: auto auto;
+}
+h5{
+    color: blue;
+}

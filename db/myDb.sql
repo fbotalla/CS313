@@ -65,8 +65,7 @@ WHERE
     coach_id = 1;
 
 INSERT INTO coach (name,age,email,phone_number,description, image)
-VALUES ('Cristiano Ronaldo','34','something@gmail.com','808-988-8888', 'Hi, I am Cristiano Ronaldo, a Portuguese professional footballer who has played for Manchester United, Real Madrid, Juventus and Portugal. Along with Lionel Messi, I am regularly considered to be one of the top two players in the world. I became the world’s most expensive player when Real Madrid signed me for 94 million Euros in 2009 from Manchester United. My sustained performance has enabled me to break numerous records for goal scoring and 
-I have been named FIFA player of the year (Ballon d’Or) five times. I have become an iconic figure in the sport.' , 'cr7.png');
+VALUES ('Cristiano Ronaldo','34','something@gmail.com','808-988-8888', 'Hi, I am Cristiano Ronaldo, a Portuguese professional footballer who has played for Manchester United, Real Madrid, Juventus and Portugal. Along with Lionel Messi, I am regularly considered to be one of the top two players in the world. I became the world’s most expensive player when Real Madrid signed me for 94 million Euros in 2009 from Manchester United. My sustained performance has enabled me to break numerous records for goal scoring and I have been named FIFA player of the year (Ballon d’Or) five times. I have become an iconic figure in the sport.' , 'cr7.png');
 
 INSERT INTO coach (name,age,email,phone_number,description, image)
 VALUES ('Zlatan Ibrahimovic','37','something@gmail.com','808-988-7777', 'Zlatan Ibrahimović is a Swedish footballer. He is currently playing for Paris Saint Germain in the French Ligue 1. He was the former captain of Swedish National Team. Zlatan Ibrahimovic is one of the best strikers in the modern day game. He has won the Puskas award for his awesome bicycle kick from 30 yards out against England. He is one of the most popular football players in the world. Ibrahimovic is sweden’s all-time top scorer in international matches.' , 'ibra.png');
@@ -75,3 +74,12 @@ SELECT * FROM coach;
 
 DELETE FROM coach
 WHERE coach_id = '3';
+
+INSERT INTO coach (name,age,email,phone_number, image)
+VALUES ('Cristiano Ronaldo','34','something@gmail.com','808-988-8888', 'cr7.png');
+
+UPDATE coach
+SET description = 'Hi, I am Cristiano Ronaldo, a Portuguese professional footballer who has played for Manchester United, Real Madrid, Juventus and Portugal. Along with Lionel Messi, I am regularly considered to be one of the top two players in the world. 
+I became'
+WHERE 
+    coach_id = 2;
