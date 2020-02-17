@@ -9,6 +9,17 @@
             $("#footer").load("footer.html"); 
         });
  </script> 
+ <script>
+
+ $('#inputPassword, #inputConfirmPassword').on('keyup', function () {
+  if ($('#inputPassword').val() == $('#inputConfirmPassword').val()) {
+    $('#message').html('Matching').css('color', 'green');
+  } else 
+    $('#message').html('Not Matching').css('color', 'red');
+});
+ 
+ </script>
+
 
 </head>
 <body>
@@ -26,7 +37,7 @@
         <div class="card-body">
           <h5 class="card-title text-center">Register</h5>
 
-          <form class="form-signin" action="registered.php" method="POST">
+          <form class="form-signin" action="registered.php" method="POST"  oninput='password.setCustomValidity(password.value != pass.value ? "Passwords do not match." : "")'>
 
             <div class="form-label-group">
               <input type="text" id="inputUserame" class="form-control" name="username" placeholder="Username" required autofocus>
@@ -40,17 +51,19 @@
              <hr>
 
             <div class="form-label-group">
-              <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-              <label for="inputPassword">Password</label>
+              <input id="password1" type=password class="form-control" required name='pass'>
+              <label for="password1">Password</label>
             </div>
 
             <div class="form-label-group">
-              <input type="password" id="inputConfirmPassword" class="form-control" name="password" placeholder="Password" required>
-              <label for="inputConfirmPassword">Confirm password</label>
+            <input id="password2" type=password class="form-control" name='password'>
+            <label for="password2">Confirm password:</label>
             </div>
 
+            <span id='message'></span>
+
             <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Register</button>
-            <a class="d-block text-center mt-2 small" href="login.php">Sign In</a>
+            <a class="d-block text-center mt-2 small" href="login.php">Log In</a>
             <hr class="my-4">
           </form>
         </div>

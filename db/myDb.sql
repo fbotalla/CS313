@@ -96,5 +96,73 @@ DROP COLUMN age;
 SELECT email from person WHERE email = 'fake@gmail.com';
 
 
-DELETE FROM person
-WHERE email = 'fake@gmail.com' ;
+DELETE  FROM person
+WHERE person_id > 1;
+
+
+ALTER TABLE person
+RENAME name TO username;
+
+INSERT INTO person(username, email, password)
+VALUES('user', 'fake_email@gmail.com','default');
+
+SELECT * FROM time;
+
+
+ALTER TABLE time
+ALTER COLUMN hour TYPE text;
+
+INSERT INTO time(hour, date)
+VALUES('4PM-5PM', 'Monday');
+INSERT INTO time(hour, date)
+VALUES('5PM-6PM', 'Tuesday');
+
+INSERT INTO time(hour, date)
+VALUES('6PM-7PM', 'Tuesday');
+
+INSERT INTO time(hour, date)
+VALUES('7PM-8PM', 'Tuesday');
+
+INSERT INTO time(hour, date)
+VALUES('4PM-5PM', 'Wednesday');
+
+INSERT INTO time(hour, date)
+VALUES('6PM-7PM', 'Wednesday');
+
+INSERT INTO time(hour, date)
+VALUES('5PM-6PM', 'Thursday');
+
+INSERT INTO time(hour, date)
+VALUES('8PM-9PM', 'Thursday');
+
+INSERT INTO time(hour, date)
+VALUES('4PM-5PM', 'Friday');
+
+INSERT INTO time(hour, date)
+VALUES('5PM-6PM', 'Friday');
+
+INSERT INTO time(hour, date)
+VALUES('6PM-7PM', 'Friday');
+
+INSERT INTO time(hour, date)
+VALUES('5PM-6PM', 'Saturday');
+
+SELECT hour, date FROM time WHERE time_id = 1
+
+
+INSERT INTO location(name_of_place)
+VALUES('Kapolei');
+
+INSERT INTO location(name_of_place)
+VALUES('Honolulu');
+
+INSERT INTO location(name_of_place)
+VALUES('Waipahu');
+
+INSERT INTO location(name_of_place)
+VALUES('Waikiki');
+
+INSERT INTO location(name_of_place)
+VALUES('Pearl City');
+
+SELECT person_id FROM person WHERE username = 'user';
