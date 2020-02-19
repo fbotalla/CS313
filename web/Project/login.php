@@ -59,16 +59,26 @@ if(!empty($username) || !empty($password)){
         die();
     }
 
-    $stmt = $db->prepare('SELECT username,password FROM person WHERE username = :username AND password = :password');
-    $stmt->execute(array('username' => $username , 'password'=> $password));
-
-    $num_rows = 0;
+    $stmt = $db->prepare('SELECT password FROM person WHERE username = :username ');
+    $stmt->execute(array('username' => $username ));
 
     foreach($stmt as $num_rows){
-        $num_rows++;
-    }
+      $pass = $num_rows['password'];
+  }
 
-    if($num_rows >= 1){
+
+    //$hashed_password = password_hash($password, PASSWORD_DEFAULT);
+
+    // $stmt = $db->prepare('SELECT username,password FROM person WHERE username = :username AND password = :password');
+    // $stmt->execute(array('username' => $username , 'password'=> $password));
+
+    // $num_rows = 0;
+
+    // foreach($stmt as $num_rows){
+    //     $num_rows++;
+    // }
+
+    if(password_verify($password, $pass)){
       session_start();
       $_SESSION["username"] = $username;
       header("Location: personal_portal.php"); 

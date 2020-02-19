@@ -10,7 +10,7 @@
 <?php
     $username = $_POST['username'];
     $email = $_POST['email'];
-    $password = $_POST['password'];
+    $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
 
     if(!empty($username) || !empty($email) || !empty($password)){
         $dbUrl = getenv('DATABASE_URL');
