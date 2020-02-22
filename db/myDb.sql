@@ -36,10 +36,14 @@ CREATE TABLE person_schedule (
     FOREIGN KEY (time_id) REFERENCES time (time_id)
 );
 
+INSERT INTO person_schedule
+
 INSERT INTO coach (name,age,email,phone_number)
 VALUES ('Fabrizio Botalla','24','something@gmail.com','808-999-9999');
 
 SELECT * FROM coach;
+
+SELECT * FROM person_schedule;
 
 ALTER TABLE coach
 ADD COLUMN description TEXT;
@@ -85,7 +89,7 @@ coach_id = 2;
 
 
 
-SELECT * FROM person;
+SELECT * FROM person_schedule;
 
 GRANT SELECT, INSERT, UPDATE ON ALL TABLES IN SCHEMA public TO Administrator;
 GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO Administrator;
@@ -96,8 +100,8 @@ DROP COLUMN age;
 SELECT email from person WHERE email = 'fake@gmail.com';
 
 
-DELETE  FROM person
-WHERE person_id > 1;
+DELETE FROM person_schedule;
+
 
 
 ALTER TABLE person
@@ -166,3 +170,12 @@ INSERT INTO location(name_of_place)
 VALUES('Pearl City');
 
 SELECT person_id FROM person WHERE username = 'user';
+
+INSERT INTO person_schedule VALUES ("person_id", "instructor_id", "location_id", "time_id");
+
+SELECT * from time;
+
+
+SELECT location_id FROM location WHERE name_of_place = 'Honolulu';
+
+SELECT coach_id FROM coach WHERE name = 'Fabrizio Botalla';

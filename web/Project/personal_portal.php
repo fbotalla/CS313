@@ -57,49 +57,51 @@
                 $("#footer").load("footer.html"); 
             });
         </script>
+
+        <script>
+            String.prototype.rtrim = function () {
+                    return this.replace(/((\s*\S+)*)\s*/, "$1");
+                    }
+        </script>
         
         <script>
             function bookForm(){
-               // alert("YOLO!")
 
-               var e = document.getElementById("coach");
-               var strUser = e.options[e.selectedIndex].value;
-
-              // alert(strUser);
-              
+                 var coach = document.getElementById("coach");
+                 var x = coach.options[coach.selectedIndex].value; 
+                 var strCoach = x.rtrim();
+                 
+               
+                var name = document.getElementById("name").value;
                 
-//             <?php
- //               $something = 'YOLOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO!';
-           //      $stmt = $db->prepare('SELECT coach_id FROM coach WHERE name = :name');
-          //       $result = $stmt->execute(array('name' => 'coach'));
 
-         // $par = strUser;
-
-                 foreach($db->query('SELECT coach_id FROM coach WHERE name = strUser')as $row){
-                    $test[] = $row['coach_id'];
-                 }
-
-                    $result = $test[0];
-
-                  
-
-              
                 
-                // $preparedInsert = $db->prepare('INSERT INTO person (username, email, password) VALUES (:username, :email, :password)');
-                // $preparedInsert->execute(array('username' => $username, 'email' => $email, 'password' => $password));
-               //  $result = "Thanks for registering! To acces your portal please follow this link " .'<a href="login.php">Log in</a>'. " Thanks!";
-            ?>
-           
+                var time = document.getElementById("time");
+                var strTime = time.options[time.selectedIndex].value;
 
-//alert("YOLO!")
-            document.getElementById("span_text").style.visibility = "visible"
-        
-            //document.getElementById("span_text").innerHTML = "did!"
+                 var array = strTime.split(' '),
+                hour = array[0], date = array[1];
             
-            return false;
-            }
-    
-                
+               var location = document.getElementById("location");
+               var strLocation = location.options[location.selectedIndex].value;
+
+              
+
+                         
+                    var xmlhttp = new XMLHttpRequest();
+                    xmlhttp.onreadystatechange = function() {
+                        if (this.readyState == 4 && this.status == 200) {
+                           document.getElementById("span_text").style.visibility = "visible";
+                           document.getElementById("span_text").innerHTML = this.responseText;
+                           
+                        }
+                    };
+                    xmlhttp.open("GET", "booking.php?user=" + name + "&coach=" + strCoach + "&time=" + hour + "&date=" + date + "&location=" + strLocation, true);
+                    xmlhttp.send();
+
+                    return false;
+     }
+                  
 
         </script>
        
@@ -136,24 +138,24 @@
                         <div class="form-row">
                             <div class="form-group col-md-6">
                                 <label for="name">Name</label>
-                                <input readonly type="name" class="form-control" id="name" placeholder="Name" value="<?php echo $_SESSION["username"]?>">
+                                <input readonly type="name" class="form-control" name="name" id="name" placeholder="Name" value="<?php echo $_SESSION["username"]?>">
                             </div>
                             <div class="form-group col-md-6">
                                 <label for="inputPassword4">Time</label>
-                                <select name="time"  class="form-control" id="time">
+                                <select name="time" class="form-control" id="time">
                                     <option value="">Select your preferred Time</option>
-                                    <option value="<?php echo $times[0];  ?> "><?php echo $times[0] . " ". $dates[0] ;  ?></option>
-                                    <option value="<?php echo $times[1];  ?> "><?php echo $times[1] . " ". $dates[1] ;  ?></option>
-                                    <option value="<?php echo $times[2];  ?> "><?php echo $times[0] . " ". $dates[2] ;  ?></option>
-                                    <option value="<?php echo $times[3];  ?> "><?php echo $times[1] . " ". $dates[3] ;  ?></option>
-                                    <option value="<?php echo $times[4];  ?> "><?php echo $times[0] . " ". $dates[4] ;  ?></option>
-                                    <option value="<?php echo $times[5];  ?> "><?php echo $times[1] . " ". $dates[5] ;  ?></option>
-                                    <option value="<?php echo $times[6];  ?> "><?php echo $times[0] . " ". $dates[6] ;  ?></option>
-                                    <option value="<?php echo $times[7];  ?> "><?php echo $times[1] . " ". $dates[7] ;  ?></option>
-                                    <option value="<?php echo $times[8];  ?> "><?php echo $times[0] . " ". $dates[8] ;  ?></option>
-                                    <option value="<?php echo $times[9];  ?> "><?php echo $times[1] . " ". $dates[9] ;  ?></option>
-                                    <option value="<?php echo $times[10];  ?> "><?php echo $times[0] . " ". $dates[10] ;  ?></option>
-                                    <option value="<?php echo $times[11];  ?> "><?php echo $times[1] . " ". $dates[11] ;  ?></option>
+                                    <option value="<?php echo $times[0]. " " . $dates[0];  ?> "><?php echo $times[0] . " ". $dates[0] ;  ?></option>
+                                    <option value="<?php echo $times[1]. " " . $dates[1];  ?> "><?php echo $times[1] . " ". $dates[1] ;  ?></option>
+                                    <option value="<?php echo $times[2]. " " . $dates[2];  ?> "><?php echo $times[0] . " ". $dates[2] ;  ?></option>
+                                    <option value="<?php echo $times[3]. " " . $dates[3];  ?> "><?php echo $times[1] . " ". $dates[3] ;  ?></option>
+                                    <option value="<?php echo $times[4]. " " . $dates[4];  ?> "><?php echo $times[0] . " ". $dates[4] ;  ?></option>
+                                    <option value="<?php echo $times[5]. " " . $dates[5];  ?> "><?php echo $times[1] . " ". $dates[5] ;  ?></option>
+                                    <option value="<?php echo $times[6]. " " . $dates[6];  ?> "><?php echo $times[0] . " ". $dates[6] ;  ?></option>
+                                    <option value="<?php echo $times[7]. " " . $dates[7];  ?> "><?php echo $times[1] . " ". $dates[7] ;  ?></option>
+                                    <option value="<?php echo $times[8]. " " . $dates[8];  ?> "><?php echo $times[0] . " ". $dates[8] ;  ?></option>
+                                    <option value="<?php echo $times[9]. " " . $dates[9];  ?> "><?php echo $times[1] . " ". $dates[9] ;  ?></option>
+                                    <option value="<?php echo $times[10]. " " . $dates[10];  ?> "><?php echo $times[0] . " ". $dates[10] ;  ?></option>
+                                    <option value="<?php echo $times[11]. " " . $dates[11];  ?> "><?php echo $times[1] . " ". $dates[11] ;  ?></option>
                                 </select>
 
                                 <label for="inputPassword4">Coach</label>
@@ -180,9 +182,9 @@
                       
                             <textarea name="Text" cols="40" rows="5"></textarea>
                         </div>            
-                        <button type="submit" class="btn btn-primary" onclick=" return bookForm()">Book</button>
+                        <button type="submit" class="btn btn-primary" onclick="return bookForm()">Book</button>
                     </form>
-                    <span id="span_text" style="visibility: hidden"><?php echo $result; ?></span>
+                    <span id="span_text" style="visibility: hidden">SOmething</span>
                    
         </div>
        
