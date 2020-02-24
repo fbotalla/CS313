@@ -17,7 +17,7 @@
                     $dbUrl = getenv('DATABASE_URL');
                 
                     if (empty($dbUrl)) {
-                        $dbUrl = "postgres://postgres:Fabem2018!@localhost:5432/postgres";
+                        $dbUrl = "postgres://postgres:xxxx@localhost:5432/postgres";
                     }
                     $dbopts = parse_url($dbUrl);
                     $dbHost = $dbopts["host"];
