@@ -21,11 +21,13 @@ function onRequest(request, response){
         response.write("<h1>Hello World!!!!</h1>");
     
     }else if(path == '/getData'){
-        json_Obj = fs.readFileSync("json.json");
-        json = JSON.parse(json_Obj);
         response.writeHead(200, { 'Content-Type': 'application/json' });
-        response.write("My Name: " + json.name + "\n");
-        response.write("My Class: " + json.class + "\n");
+        response.write(JSON.stringify(["name : Fabrizio Botalla", "class: CS313"]))
+        // json_Obj = fs.readFileSync("json.json");
+        // json = JSON.parse(json_Obj);
+        // response.writeHead(200, { 'Content-Type': 'application/json' });
+        // response.write("My Name: " + json.name + "\n");
+        // response.write("My Class: " + json.class + "\n");
     }else if(path == '/beyond'){
         response.writeHead(301,
             {Location: 'http://google.com'}
